@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/colors.dart';
+import 'package:quiz_app/screens/quiz/components/progress_bar.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 class Body extends StatelessWidget {
-  const Body({
-    super.key,
-  });
+  const Body();
 
   @override
   Widget build(BuildContext context) {
@@ -20,44 +19,44 @@ class Body extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  width: double.infinity,
-                  height: 35,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Color(0xFF3F4768),
-                      width: 3,
-                    ),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: Stack(
+                ProgressBar(),
+                SizedBox(
+                  height: kDefaultPadding,
+                ),
+                Text.rich(
+                  TextSpan(
+                    text: "Question 1",
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline4
+                        .copyWith(color: kSecondaryColor),
                     children: [
-                      // Layout Builder nous fournit l'espace disponible pour le conteneur
-                      // constraints.maxWith nécessaire pour notre animation
-                      LayoutBuilder(
-                        builder: (context, constraints) => Container(
-                          width: constraints.maxWidth * 0.5, // convertit en 50%
-                          decoration: BoxDecoration(
-                            gradient: kPrimaryGradient,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                        ),
+                      TextSpan(
+                        text: "/10",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline5
+                            .copyWith(color: kSecondaryColor),
                       ),
-                      Positioned.fill(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: kDefaultPadding / 2),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("18 sec"),
-                              WebsafeSvg.asset("assets/icons/clock.svg"),
-                            ],
-                          ),
-                        ),
-                      )
                     ],
+                  ),
+                ),
+                Divider(
+                  thickness: 1.5,
+                ),
+                SizedBox(
+                  height: kDefaultPadding,
+                ),
+                Container(
+                  padding: EdgeInsets.all(kDefaultPadding),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Column(
+                    children: [],
                   ),
                 ),
               ],

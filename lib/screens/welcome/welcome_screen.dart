@@ -3,7 +3,7 @@ import 'package:quiz_app/colors.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  const WelcomeScreen();
 
   @override
   Widget build(BuildContext context) {

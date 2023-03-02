@@ -3,7 +3,7 @@ import 'package:quiz_app/screens/quiz/components/body.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 class QuizScreen extends StatelessWidget {
-  const QuizScreen({super.key});
+  const QuizScreen();
 
   @override
   Widget build(BuildContext context) {
